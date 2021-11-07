@@ -88,6 +88,8 @@ public class Recipe {
 		this.vegetarian = vegetarian;
 	}
 	
+	
+	
 
    
  
