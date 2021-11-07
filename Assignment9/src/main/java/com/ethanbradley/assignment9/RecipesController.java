@@ -17,31 +17,29 @@ public class RecipesController {
 	public ArrayList<Recipe> allRecipes() {
 		return fileService.readFileIntoRecipeCollection();
 	}
-	
+
 	@GetMapping("/gluten-free")
-	public List<Recipe> glutenFree(){
-		return fileService.readFileIntoRecipeCollection().stream()
-				                                         .filter(e -> e.getGlutenFree().equals(true))
-				                                         .collect(Collectors.toList());
+	public List<Recipe> glutenFree() {
+		return fileService.readFileIntoRecipeCollection().stream().filter(e -> e.getGlutenFree().equals(true))
+				.collect(Collectors.toList());
 	}
 
 	@GetMapping("/vegan")
-	public List<Recipe> vegan(){
-		return fileService.readFileIntoRecipeCollection().stream()
-				                                         .filter(e -> e.getVegan().equals(true))
-				                                         .collect(Collectors.toList());
+	public List<Recipe> vegan() {
+		return fileService.readFileIntoRecipeCollection().stream().filter(e -> e.getVegan().equals(true))
+				.collect(Collectors.toList());
 	}
+
 	@GetMapping("/vegan-and-gluten-free")
-	public List<Recipe> veganAndGlutenFree(){
+	public List<Recipe> veganAndGlutenFree() {
 		return fileService.readFileIntoRecipeCollection().stream()
-														 .filter(e -> e.getGlutenFree().equals(true) && e.getVegan().equals(true))
-														 .collect(Collectors.toList());
+				.filter(e -> e.getGlutenFree().equals(true) && e.getVegan().equals(true)).collect(Collectors.toList());
 	}
+
 	@GetMapping("/vegetarian")
-	public List<Recipe> vegetarian(){
-		return fileService.readFileIntoRecipeCollection().stream()
-														 .filter(e -> e.getVegetarian().equals(true))
-														 .collect(Collectors.toList());
+	public List<Recipe> vegetarian() {
+		return fileService.readFileIntoRecipeCollection().stream().filter(e -> e.getVegetarian().equals(true))
+				.collect(Collectors.toList());
 	}
-	
+
 }
